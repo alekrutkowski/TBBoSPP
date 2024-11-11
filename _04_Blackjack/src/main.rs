@@ -1,3 +1,5 @@
+// Converted from Python version with 'ChatGPT 4o'
+
 use rand::seq::SliceRandom;
 use std::io;
 use std::process;
