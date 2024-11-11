@@ -27,7 +27,17 @@ fn main() {
         The dealer stops hitting at 17.");
 
     let mut money = 5000;
-    while money > 0 {
+
+    // Main game loop
+    loop {
+        // Check if the player has run out of money:
+        if money <= 0 {
+            println!("You're broke!");
+            println!("Good thing you weren't playing with real money.");
+            println!("Thanks for playing!");
+            process::exit(0); // Exit the game
+        }
+
         println!("Money: {}", money);
         let bet = get_bet(money);
 
@@ -102,7 +112,6 @@ fn main() {
             println!("It's a tie, the bet is returned to you.");
         }
     }
-    println!("You're out of money. Thanks for playing!");
 }
 
 fn get_bet(max_bet: i32) -> i32 {
